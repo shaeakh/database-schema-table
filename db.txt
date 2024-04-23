@@ -9,56 +9,7 @@ CREATE TABLE tbl_post(
     FOREIGN KEY (Venue_id) REFERENCES tbl_venue(Venue_id)
 )
 
-CREATE TABLE tbl_it_secretary(
-	it_secretary_id int AUTO_INCREMENT PRIMARY KEY,
-    Name varchar(100),
-    Phone_number varchar(100),  
-    Email  varchar(100),  
-    Department varchar(100)
-)
 
-
-CREATE TABLE tbl_Alumni(
-	Alumni_id int AUTO_INCREMENT PRIMARY KEY,
-    Name varchar(100),
-    Phone_number varchar(100),  
-    Email  varchar(100),  
-    Department varchar(100),    
-    Registration_Number int,
-    Blood_group varchar(20),        
-    Graduation_Year year, 
-    Location varchar(100)
-)
-
-CREATE TABLE tbl_employee(
-    Employee_id int AUTO_INCREMENT PRIMARY KEY,
-	Name varchar(100),
-    Phone_number varchar(100),  
-    Email  varchar(100),  
-    Department varchar(100),
-    Address varchar(100),
-    Blood_group varchar(20)   
-)
-
-CREATE TABLE tbl_Student(
-    Registration_roll  int PRIMARY KEY,
-	Name varchar(100),
-    Phone_number varchar(100),  
-    Email  varchar(100),  
-    Department varchar(100),
-    Blood_group varchar(20)
-)
-
-CREATE TABLE tbl_teacher(
-    Teacher_id int AUTO_INCREMENT PRIMARY KEY,
-	Name varchar(100),
-    Phone_number varchar(100),  
-    Email  varchar(100),  
-    Department varchar(100),
-    Address varchar(100),
-    Blood_group varchar(20),
-    Location varchar(100)
-)
 
 CREATE TABLE tbl_expense_diary(
 	transaction_id int PRIMARY KEY,
@@ -85,12 +36,9 @@ CREATE TABLE tbl_event(
 	Edate date,
     Start_time time,
     End_time time,
-    Details varchar(100),        
-    Invite_id int,
+    Details varchar(100),
     Application_id int,
     Venue_id int,
-    
-    FOREIGN KEY (Invite_id) REFERENCES tbl_invitation(Invite_id),
     FOREIGN KEY (Application_id) REFERENCES tbl_application(Application_id),
     FOREIGN KEY (Venue_id) REFERENCES tbl_venue(Venue_id)
 )
@@ -99,15 +47,9 @@ CREATE TABLE tbl_application(
 	Application_id int AUTO_INCREMENT PRIMARY KEY,
     Reason varchar(200),
     Atime time,
-    Proctor_id int,
-	FOREIGN KEY (Proctor_id) REFERENCES tbl_proctor(Proctor_id)
-)
-
-CREATE TABLE tbl_proctor(
-	Proctor_id int AUTO_INCREMENT PRIMARY KEY,
-    Name varchar(100),
-    Phone_number varchar(100),
-    Email varchar(100)    
+   Proctor_Name varchar(100),
+    Proctor_Phone_number varchar(100),
+    Proctor_Email varchar(100)    
 )
 
 CREATE TABLE tbl_invitation(
@@ -153,15 +95,25 @@ CREATE TABLE tbl_treasurer(
 )
 
 CREATE TABLE tbl_donate(
-	Donate_id int AUTO_INCREMENT  PRIMARY KEY,
+	Donate_id int ,
+    Member_ID int,
+    Amount int,
+    DTime time,
+    Reference  varchar(100),
+
+    FOREIGN KEY (Member_ID) REFERENCES tbl_memberlist(Member_ID)
+)
+
+CREATE TABLE tbl_memberlist(
+	Member_ID int AUTO_INCREMENT PRIMARY KEY,
+    Member_Type varchar(100),
     Name varchar(100),
     Phone_number varchar(100),  
     Email  varchar(100),  
     Department varchar(100),    
-    Amount int,
-    DTime time,
-    Reference  varchar(100)
-    
+    Registration_Number int,
+    Blood_group varchar(20),            
+    Location varchar(100)
 )
 
 CREATE TABLE tbl_receipt(
