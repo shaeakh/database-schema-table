@@ -12,7 +12,7 @@ CREATE TABLE tbl_post(
 
 
 CREATE TABLE tbl_expense_diary(
-	transaction_id int PRIMARY KEY,
+	transaction_id int,
     Event_id int,
     Etime time,
     Donate_id int,
@@ -75,13 +75,7 @@ CREATE TABLE tbl_venue(
     Location varchar(100)
 )
 
-CREATE TABLE tbl_organiser(
-	organiser_id int AUTO_INCREMENT PRIMARY KEY,
-    Name varchar(100),
-    Phone_number varchar(100),  
-    Email  varchar(100),  
-    Department varchar(100)
-)
+
 
 
 CREATE TABLE tbl_treasurer(
@@ -115,29 +109,12 @@ CREATE TABLE tbl_memberlist(
 )
 
 CREATE TABLE tbl_receipt(
-	Receipt_id int PRIMARY KEY, 
-    Service_id int,
-    Item_id int,
-    rTime time,
-    cost int,
-    details varchar(100),
-    
-    FOREIGN KEY (Service_id) REFERENCES tbl_service(Service_id),
-    FOREIGN KEY (Item_id) REFERENCES tbl_item(Item_id)
-)
-
-CREATE TABLE tbl_service(
-	Service_id int, 
-    Name varchar(100),
-    Location varchar(100),
-    S_time time,    
-    Item_id int,
-    FOREIGN KEY (Item_id) REFERENCES tbl_item(Item_id)
-)
-
-CREATE TABLE tbl_item(
-	Item_id int AUTO_INCREMENT PRIMARY KEY, 
+	Receipt_id int AUTO_INCREMENT PRIMARY KEY,
+   Service_Name varchar(100),
+    Service_Location varchar(100),
+    Service_time time,    
     Item_name varchar(40), 
-    item_amount varchar(100), 
-    cost int    
+    item_amount varchar(100),         
+    cost int,
+    details varchar(100)
 )
