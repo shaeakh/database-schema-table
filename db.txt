@@ -2,7 +2,7 @@
 CREATE TABLE tbl_post(
 	Post_id int AUTO_INCREMENT PRIMARY KEY,
     Event_id int,
-    Ptime time,
+    Pdate date,
     details varchar(100),    
     Venue_id int,
     FOREIGN KEY (Event_id) REFERENCES tbl_event(Event_id),
@@ -14,7 +14,7 @@ CREATE TABLE tbl_post(
 CREATE TABLE tbl_expense_diary(
 	transaction_id int,
     Event_id int,
-    Etime time,
+    Edate date,
     Donate_id int,
     Receipt_id int,
     Treasurer_id int,
@@ -32,8 +32,8 @@ CREATE TABLE tbl_event(
 	Event_id int AUTO_INCREMENT PRIMARY KEY,
     Event_type varchar(100),
 	Edate date,
-    Start_time time,
-    End_time time,
+    Start_date date,
+    End_date date,
     Details varchar(100),
     Application_id int,
     Venue_id int,
@@ -44,7 +44,7 @@ CREATE TABLE tbl_event(
 CREATE TABLE tbl_application(
 	Application_id int AUTO_INCREMENT PRIMARY KEY,
     Reason varchar(200),
-    Atime time,
+    Adate date,
    Proctor_Name varchar(100),
     Proctor_Phone_number varchar(100),
     Proctor_Email varchar(100)    
@@ -52,7 +52,7 @@ CREATE TABLE tbl_application(
 
 CREATE TABLE tbl_invitation(
 	Invite_id int AUTO_INCREMENT PRIMARY KEY,
-    ITime time,
+    Idate date,
     IDate date,
     Event_name varchar(100),
     details varchar(100),
@@ -64,9 +64,9 @@ CREATE TABLE tbl_invitation(
 CREATE TABLE tbl_Venue_booking(
 	Booking_id int PRIMARY KEY,
     Venue_id int,
-    Btime time,
-    Start_time time,
-    End_time time, 
+    Bdate date,
+    Start_date date,
+    End_date date, 
     FOREIGN KEY (Venue_id) REFERENCES tbl_venue(Venue_id)
 )
 CREATE TABLE tbl_venue(
@@ -90,7 +90,7 @@ CREATE TABLE tbl_donate(
 	Donate_id int AUTO_INCREMENT PRIMARY KEY,
     Member_ID int,
     Amount int,
-    DTime time,
+    Ddate date,
     Reference  varchar(100),
 
     FOREIGN KEY (Member_ID) REFERENCES tbl_memberlist(Member_ID)
@@ -112,7 +112,7 @@ CREATE TABLE tbl_receipt(
 	Receipt_id int AUTO_INCREMENT PRIMARY KEY,
    Service_Name varchar(100),
     Service_Location varchar(100),
-    Service_time time,    
+    Service_date date,    
     Item_name varchar(40), 
     item_amount varchar(100),         
     cost int,
