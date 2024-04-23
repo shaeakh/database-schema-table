@@ -18,15 +18,13 @@ CREATE TABLE tbl_expense_diary(
     Donate_id int,
     Receipt_id int,
     Treasurer_id int,
-    organiser_id int,
     debited int,
     credited int,
     current_balance int,  
     FOREIGN KEY (Donate_id) REFERENCES tbl_donate(Donate_id),
     FOREIGN KEY (Event_id) REFERENCES tbl_event(Event_id),
     FOREIGN KEY (Receipt_id) REFERENCES tbl_receipt(Receipt_id),
-    FOREIGN KEY (Treasurer_id) REFERENCES tbl_treasurer(Treasurer_id),
-    FOREIGN KEY (organiser_id) REFERENCES tbl_organiser(organiser_id)
+    FOREIGN KEY (Treasurer_id) REFERENCES tbl_treasurer(Treasurer_id)
     
 )
 
@@ -95,7 +93,7 @@ CREATE TABLE tbl_treasurer(
 )
 
 CREATE TABLE tbl_donate(
-	Donate_id int ,
+	Donate_id int AUTO_INCREMENT PRIMARY KEY,
     Member_ID int,
     Amount int,
     DTime time,
