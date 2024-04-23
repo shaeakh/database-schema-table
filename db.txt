@@ -126,18 +126,18 @@ CREATE TABLE tbl_receipt(
     FOREIGN KEY (Item_id) REFERENCES tbl_item(Item_id)
 )
 
+CREATE TABLE tbl_service(
+	Service_id int, 
+    Name varchar(100),
+    Location varchar(100),
+    S_time time,    
+    Item_id int,
+    FOREIGN KEY (Item_id) REFERENCES tbl_item(Item_id)
+)
+
 CREATE TABLE tbl_item(
 	Item_id int AUTO_INCREMENT PRIMARY KEY, 
     Item_name varchar(40), 
-    cost int,
-    Service_id int ,
-    FOREIGN KEY (Service_id) REFERENCES tbl_service(Service_id)
-)
-
-
-CREATE TABLE tbl_service(
-	Service_id int PRIMARY KEY, 
-    Name varchar(100),
-    Location varchar(100),
-    fees int
+    item_amount varchar(100), 
+    cost int    
 )
