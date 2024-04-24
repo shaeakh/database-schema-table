@@ -32,8 +32,6 @@ CREATE TABLE tbl_event(
 	Event_id int AUTO_INCREMENT PRIMARY KEY,
     Event_type varchar(100),
 	Edate date,
-    Start_date date,
-    End_date date,
     Details varchar(100),
     Application_id int,
     Venue_id int,
