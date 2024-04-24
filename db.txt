@@ -51,7 +51,6 @@ CREATE TABLE tbl_application(
 CREATE TABLE tbl_invitation(
 	Invite_id int AUTO_INCREMENT PRIMARY KEY,
     Idate date,
-    IDate date,
     Event_name varchar(100),
     details varchar(100),
     Venue_id int,
