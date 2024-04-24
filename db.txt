@@ -1,3 +1,22 @@
+INSERT INTO tbl_post(Event_id,Pdate,details,Venue_id)
+VALUES
+(2,"2020-04-09","",2),
+
+INSERT INTO tbl_application(Reason,Atime,Proctor_Name,Proctor_Phone_number,Proctor_Email)
+VALUES
+
+INSERT INTO tbl_venue_booking(Booking_id,Venue_id,Btime,Start_time,End_time)
+VALUES
+
+INSERT INTO tbl_venue(Name,Location)
+VALUES
+
+INSERT INTO tbl_donate(Member_ID,Amount,DTime,Reference)
+VALUES
+
+INSERT INTO tbl_receipt(Service_Name,Service_Location,Service_time,Item_name,item_amount,cost,details)
+VALUES
+
 
 CREATE TABLE tbl_post(
 	Post_id int AUTO_INCREMENT PRIMARY KEY,
