@@ -1,0 +1,23 @@
+(1) DDL : Data Definition Language
+===============================================================
+    (a) Create      :   
+    (b) Alter       :    
+    (c) Drop        :   
+
+(2) DML : Data Manipulation Language
+===============================================================
+    (a) Insert      :   
+    (b) Select      :    
+    (c) Update      :   
+    (d) Delete      :   
+
+(3) DCL : Data Control Language
+===============================================================
+    (a) Grant       :   
+    (b) Revoke      :   
+
+(4) DTL : Data Transection Language
+===============================================================
+    (a) Commit      :   
+    (b) Rollback    :   
+    (c) Save Point  :   
