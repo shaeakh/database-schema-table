@@ -1,1 +1,15 @@
 
+CREATE TABLE tbl_task(
+	u_id int,
+    t_id int,
+    title varchar(200),
+    description varchar(1000),
+    _status varchar(20),
+    
+    FOREIGN KEY (u_id) REFERENCES tbl_users(u_id)
+);
+
+create TABLE tbl_users(
+	u_id int AUTO_INCREMENT PRIMARY KEY,
+    u_name varchar(200)
+);
