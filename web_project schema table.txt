@@ -6,10 +6,10 @@ VALUES
 
 INSERT INTO tbl_users (u_name)
 VALUES
-("Shaeakh"),
-("Amit"),
-("Niloy"),
-("Hasin");
+("Shaeakh","shaeakh12@gmail.com","Sh@e.1243","admin"),
+("Amit","amithjoy@gmail.com","bInL@den9/11","regular_user"),
+("Niloy","niloy06@yahoo.com","g@ddafiBoss","regular_user"),
+("Hasin","hasin11@yahoo.com","@ppleUser","admin");
 
 CREATE TABLE tbl_task(
 	u_id int,
@@ -23,7 +23,10 @@ CREATE TABLE tbl_task(
 
 create TABLE tbl_users(
 	u_id int AUTO_INCREMENT PRIMARY KEY,
-    u_name varchar(200)
+    	u_name varchar(200),
+	email varchar(200),
+	_password varchar(200),
+	role varchar(200);
 );
 
 create DATABASE todolist_webproject;
