@@ -1,3 +1,15 @@
+INSERT INTO tbl_task
+VALUES
+(1,1,"Finish homework","Complete math assignment", "Completed"),
+(1,2,"Buy groceries","Milk, eggs, bread","In Progress"),
+(2,1,"Buy groceries","Milk, eggs, bread","In Progress");
+
+INSERT INTO tbl_users (u_name)
+VALUES
+("Shaeakh"),
+("Amit"),
+("Niloy"),
+("Hasin");
 
 CREATE TABLE tbl_task(
 	u_id int,
@@ -13,3 +25,5 @@ create TABLE tbl_users(
 	u_id int AUTO_INCREMENT PRIMARY KEY,
     u_name varchar(200)
 );
+
+create DATABASE todolist_webproject;
