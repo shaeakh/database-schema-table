@@ -4,7 +4,7 @@ VALUES
 (1,2,"Buy groceries","Milk, eggs, bread","In Progress"),
 (2,1,"Buy groceries","Milk, eggs, bread","In Progress");
 
-INSERT INTO tbl_users (u_name)
+INSERT INTO tbl_users (u_name,email,_password,role)
 VALUES
 ("Shaeakh","shaeakh12@gmail.com","Sh@e.1243","admin"),
 ("Amit","amithjoy@gmail.com","bInL@den9/11","regular_user"),
@@ -26,7 +26,7 @@ create TABLE tbl_users(
     	u_name varchar(200),
 	email varchar(200),
 	_password varchar(200),
-	role varchar(200);
+	role varchar(200)
 );
 
 create DATABASE todolist_webproject;
