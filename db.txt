@@ -17,6 +17,13 @@ VALUES
 INSERT INTO tbl_receipt(Service_Name,Service_Location,Service_time,Item_name,item_amount,cost,details)
 VALUES
 
+CREATE TABLE tbl_treasurer
+(
+	Treasurer_id int PRIMARY KEY AUTO_INCREMENT,
+    Member_ID int ,
+    
+    FOREIGN KEY (Member_ID) REFERENCES tbl_memberlist(Member_ID)
+)
 
 CREATE TABLE tbl_receipt(
 	Receipt_id int AUTO_INCREMENT PRIMARY KEY,
@@ -111,16 +118,6 @@ CREATE TABLE tbl_venue(
     Location varchar(100)
 )
 
-
-
-
-CREATE TABLE tbl_treasurer(
-	Treasurer_id int AUTO_INCREMENT PRIMARY KEY,
-    Name varchar(100),
-    Phone_number varchar(100),  
-    Email  varchar(100),  
-    Department varchar(100)
-)
 
 CREATE TABLE tbl_donate(
 	Donate_id int AUTO_INCREMENT PRIMARY KEY,
