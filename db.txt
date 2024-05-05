@@ -16,14 +16,24 @@ VALUES
 
 INSERT INTO tbl_receipt(Service_Name,Service_Location,Service_time,Item_name,item_amount,cost,details)
 VALUES
-
-CREATE TABLE tbl_treasurer
-(
-	Treasurer_id int PRIMARY KEY AUTO_INCREMENT,
-    Member_ID int ,
+CREATE TABLE tbl_donate(
+	Donate_id int AUTO_INCREMENT PRIMARY KEY,
     
-    FOREIGN KEY (Member_ID) REFERENCES tbl_memberlist(Member_ID)
+    Event_id int,
+    Member_ID int,
+    Treasurer_id int,
+    
+    Amount int,
+    Ddate date,
+    Reference  varchar(100),
+
+    FOREIGN KEY (Event_id) REFERENCES tbl_event(Event_id),
+    FOREIGN KEY (Member_ID) REFERENCES tbl_memberlist(Member_ID),
+    FOREIGN KEY (Treasurer_id) REFERENCES tbl_treasurer(Treasurer_id)
 )
+
+
+
 
 CREATE TABLE tbl_receipt(
 	Receipt_id int AUTO_INCREMENT PRIMARY KEY,
@@ -45,6 +55,13 @@ CREATE TABLE tbl_receipt(
     FOREIGN KEY (Activity_id) REFERENCES tbl_activities(Activity_id)
 );
 
+CREATE TABLE tbl_treasurer
+(
+	Treasurer_id int PRIMARY KEY AUTO_INCREMENT,
+    Member_ID int ,
+    
+    FOREIGN KEY (Member_ID) REFERENCES tbl_memberlist(Member_ID)
+)
 CREATE TABLE tbl_post(
 	Post_id int AUTO_INCREMENT PRIMARY KEY,
     Event_id int,
