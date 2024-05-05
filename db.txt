@@ -18,6 +18,26 @@ INSERT INTO tbl_receipt(Service_Name,Service_Location,Service_time,Item_name,ite
 VALUES
 
 
+CREATE TABLE tbl_receipt(
+	Receipt_id int AUTO_INCREMENT PRIMARY KEY,
+    
+    Event_id int,
+    Treasurer_id int,
+    Activity_id int,
+    
+   	Service_Name varchar(100),
+    Service_Location varchar(100),
+    Service_date date,    
+    Item_name varchar(40), 
+    item_amount varchar(100),         
+    cost int,
+    details varchar(100), 
+    
+    FOREIGN KEY (Event_id) REFERENCES tbl_event(Event_id),
+    FOREIGN KEY (Treasurer_id) REFERENCES tbl_treasurer(Treasurer_id),
+    FOREIGN KEY (Activity_id) REFERENCES tbl_activities(Activity_id)
+);
+
 CREATE TABLE tbl_post(
 	Post_id int AUTO_INCREMENT PRIMARY KEY,
     Event_id int,
@@ -122,15 +142,4 @@ CREATE TABLE tbl_memberlist(
     Registration_Number int,
     Blood_group varchar(20),            
     Location varchar(100)
-)
-
-CREATE TABLE tbl_receipt(
-	Receipt_id int AUTO_INCREMENT PRIMARY KEY,
-   Service_Name varchar(100),
-    Service_Location varchar(100),
-    Service_date date,    
-    Item_name varchar(40), 
-    item_amount varchar(100),         
-    cost int,
-    details varchar(100)
 )
